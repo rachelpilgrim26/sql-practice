@@ -6,4 +6,33 @@
 -- Using these SQL clauses will help you solve the mystery: 
 --    SELECT, FROM, WHERE, AND, OR, ORDER BY, LIMIT, LIKE, DISTINCT, BETWEEN, AS
 
--- adding a comment 
+
+--Crime scene report
+SELECT date, type, description, city
+FROM crime_scene_report
+WHERE date= '20180115' AND type= 'murder' AND city = 'SQL City';
+
+--Annabel Miller is the witness what's the information?
+SELECT * FROM person WHERE name LIKE '%Annabel%';
+
+--found that annable was onn that street
+SELECT * FROM person
+WHERE name LIKE '%Annabel%' AND address_street_name = 'Franklin Ave';
+
+-- Annabel Millers interview what she seen
+SELECT * FROM interview WHERE person_id = '16371';
+
+--she saw a murder happen at the gym while working out
+SELECT * FROM get_fit_now_member WHERE name LIKE '%Annabel%';
+
+--Now look into when she saw the murder happen
+SELECT * FROM get_fit_now_check_in WHERE membership_id = ‘90081’;
+
+--Hours check into the gym 1600 - 1700
+SELECT * FROM get_fit_now_check_in WHERE check_in_date = ‘20180109’ AND check_in_time = 1600 OR check_out_time = 1700;
+-- Two people who are the suspects
+--Jeremy Bowers
+--Joe Germuska
+--Answer!
+---Jeremy Bowers was the culprit
+
