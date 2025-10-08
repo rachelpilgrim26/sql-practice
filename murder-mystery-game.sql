@@ -12,7 +12,7 @@ SELECT date, type, description, city
 FROM crime_scene_report
 WHERE date= '20180115' AND type= 'murder' AND city = 'SQL City';
 
---Annabel Miller is the witness what's the information?
+--Annabel Miller is the witness what's the information
 SELECT * FROM person WHERE name LIKE '%Annabel%';
 
 --found that annable was onn that street
@@ -36,3 +36,16 @@ SELECT * FROM get_fit_now_check_in WHERE check_in_date = ‘20180109’ AND chec
 --Answer!
 ---Jeremy Bowers was the culprit
 
+--BONUS:
+--Jeremy Bowers was the hitman but who did it for real
+--he had interview spoke about a woman
+SELECT * FROM drivers_license WHERE hair_color = 'red' AND height BETWEEN '65' AND '67' AND car_make = 'Tesla';
+
+--There are 3  woman that could have done it 
+SELECT * FROM person WHERE license_id = '202298' OR license_id = '291182' OR license_id = '918773';
+
+-- but who was at the facebook event 
+SELECT * FROM facebook_event_checkin
+WHERE event_name LIKE '%Symphony%' AND person_id = '99716';
+-- answer 
+--Miranda Priestly made the kill!
