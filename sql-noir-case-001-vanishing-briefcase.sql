@@ -27,6 +27,7 @@
 --   scar       
 -- FROM suspects
 -- WHERE attire = 'trench coat';
+-- I TRIED THIS WITHOUT THE TRENCH COAT PART and it didnt work so 
 
 -- Results
 -- id	name	attire	scar
